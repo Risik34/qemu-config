@@ -1,0 +1,6 @@
+git
+python
+python3
+nvim
+wget
+
