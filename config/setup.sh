@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/sh
 apk update&&apk upgrade
 apk add node
 cat packages.txt | xargs npm install -g
