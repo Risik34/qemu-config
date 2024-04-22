@@ -24,21 +24,10 @@ echo -e "nameserver 192.168.1.1\nnameserver 1.1.1.1" > /etc/resolv.conf
 
 ### Setting up alpine
 ```bash
-touch answerfile && echo "KEYMAPOPTS="tr"
-HOSTNAMEOPTS="-n alpine"
-INTERFACESOPTS="auto lo
-iface lo inet loopback
-
-auto eth0
-iface eth0 inet dhcp
-    hostname alpine
-"
-TIMEZONEOPTS="-z UTC"
-PROXYOPTS="none"
-APKREPOSOPTS="http://dl-cdn.alpinelinux.org/alpine/v3.19/main http://dl-cdn.alpinelinux.org/alpine/v3.19/community"
-SSHDOPTS="-c openssh"
-NTPOPTS="-c busybox"
-DISKOPTS="-v -m sys -s 0 /dev/sda"">answerfile&&sed -i -E 's/(local kernel_opts)=.*/\1="console=ttyS0"/' /sbin/setup-disk&&setup-alpine -f answerfile
+sed -i -E 's/(local kernel_opts)=.*/\1="console=ttyS0"/' /sbin/setup-disk
+```
+```bash
+setup-alpine -f answerfile
 ```
 ### Power off and turn on again 
 ```bash
