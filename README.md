@@ -24,6 +24,9 @@ echo -e "nameserver 192.168.1.1\nnameserver 1.1.1.1" > /etc/resolv.conf
 
 ### Setting up alpine
 ```bash
+wget https://raw.githubusercontent.com/Risik34/qemu-config/main/config/answerfile
+```
+```bash
 sed -i -E 's/(local kernel_opts)=.*/\1="console=ttyS0"/' /sbin/setup-disk
 ```
 ```bash
