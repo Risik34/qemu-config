@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Install Zsh
-apk add zsh
+apt install zsh
 
 # Install wget and git for fetching Oh My Zsh installation script
-apk add wget git
+apt install  wget git
 
 # Install Oh My Zsh
 sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
